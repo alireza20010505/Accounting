@@ -9,17 +9,20 @@ namespace Accounting.DataLayer.Entities
 {
     public class UserRoles : BaseEntity
     {
+        public UserRoles()
+        {
+            
+        }
         
-
         public long UserId { get; set; }
 
         public long RoleId { get; set; }
 
         #region Relation
 
-        public Role Role { get; set; }
+        public virtual Role Role { get; set; }
 
-        public User User { get; set; }
+        public virtual User User { get; set; }
 
         #endregion
     }

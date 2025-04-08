@@ -5,30 +5,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Accounting.DataLayer.Entities
+namespace Accounting.DataLayer.Entities;
+
+public class User : BaseEntity
 {
-    public class User : BaseEntity
-    {
-        public User()
-        {
+    public string UserName { get; set; }
 
-        }
-     
-           
-        public string UserName { get; set; }
+    public string AccountCode { get; set; }
 
-        public string AccountCode { get; set; }
+    #region Relation
 
-        #region Relation
+    public virtual List<UserRoles> UserRoles { get; set; }
+    public virtual List<Transaction> Transactions { get; set; }
 
-        public virtual List<UserRoles> UserRoles { get; set; }
-        public virtual List<Transaction> Transactions { get; set; }
-        #endregion
-
-
-
-
-
-    }
-
+    #endregion
 }

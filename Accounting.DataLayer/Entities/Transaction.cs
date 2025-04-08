@@ -21,6 +21,8 @@ namespace Accounting.DataLayer.Entities
 
         public long Price { get; set; }
 
+        public bool IsFinaly { get; set; } = false;
+
         #region Relation
 
         public User User { get; set; }

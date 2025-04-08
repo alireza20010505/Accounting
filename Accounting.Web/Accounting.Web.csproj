@@ -17,10 +17,25 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="9.0.0" />
   </ItemGroup>
-
+  
   <ItemGroup>
-    <ProjectReference Include="..\Accounting.DataLayer\Accounting.DataLayer.csproj" />
+    <Folder Include="wwwroot\" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <ProjectReference Include="..\Accounting.Core\Accounting.Core.csproj" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="Views\Shared\Error.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Shared\_Layout.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Shared\_ValidationScriptsPartial.cshtml" />
+    <_ContentIncludedByDefault Remove="wwwroot\css\demo1\style-rtl.min.css" />
+    <_ContentIncludedByDefault Remove="wwwroot\css\demo1\style.min.css" />
+    <_ContentIncludedByDefault Remove="wwwroot\css\demo3\style-rtl.min.css" />
+    <_ContentIncludedByDefault Remove="wwwroot\css\demo3\style.min.css" />
   </ItemGroup>
 
 </Project>

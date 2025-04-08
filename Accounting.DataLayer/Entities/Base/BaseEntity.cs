@@ -13,7 +13,7 @@ namespace Accounting.DataLayer.Entities.Base
 
         public DateTime CreateDate { get; set; } = DateTime.UtcNow;
 
-        public DateTime UpdateDate { get; set; }= DateTime.UtcNow;
+        public DateTime? UpdateDate { get; set; }= DateTime.UtcNow;
 
         public bool IsDelete { get; set; }= false;
     }

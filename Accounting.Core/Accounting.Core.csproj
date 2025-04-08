@@ -18,10 +18,13 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
   </ItemGroup>
-
+  
+  <ItemGroup>
+    <Folder Include="DTOs\" />
+  </ItemGroup>
+  
   <ItemGroup>
     <ProjectReference Include="..\Accounting.DataLayer\Accounting.DataLayer.csproj" />
-    <ProjectReference Include="..\Accounting.Web\Accounting.Web.csproj" />
   </ItemGroup>
 
 </Project>
