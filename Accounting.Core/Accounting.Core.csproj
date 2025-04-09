@@ -20,10 +20,6 @@
   </ItemGroup>
   
   <ItemGroup>
-    <Folder Include="DTOs\" />
-  </ItemGroup>
-  
-  <ItemGroup>
     <ProjectReference Include="..\Accounting.DataLayer\Accounting.DataLayer.csproj" />
   </ItemGroup>
 

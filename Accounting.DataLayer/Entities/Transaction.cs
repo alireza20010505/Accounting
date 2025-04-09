@@ -26,6 +26,7 @@ namespace Accounting.DataLayer.Entities
         #region Relation
 
         public User User { get; set; }
+        public TransectionType TransectionType  { get; set; }
 
         #endregion
 

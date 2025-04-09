@@ -13,8 +13,9 @@ public interface IUserService
      void UpdeteUser(User user);
      User GetUserById(int userId);
      
+     bool ExistCode(string code);
      bool UserExists(int userId);
-     
+     bool UserExists(string userName);
      long GetUserIdByUsername(string username);
      User GetUserByAccountCode(string accountCode);
 

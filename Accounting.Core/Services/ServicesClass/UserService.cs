@@ -40,9 +40,18 @@ public class UserService : IUserService
         
     }
 
+    public bool ExistCode(string code)
+    {
+      return _context.Users.Any(u=>u.AccountCode == code);
+    }
+
     public bool UserExists(int userId)
     {
         return _context.Users.Any(u => u.Id == userId);
+    }
+    public bool UserExists(string userName)
+    {
+        return _context.Users.Any(u => u.UserName == userName);
     }
 
     public long GetUserIdByUsername(string username)

@@ -13,6 +13,8 @@ public class User : BaseEntity
 
     public string AccountCode { get; set; }
 
+    public string Password { get; set; }
+
     #region Relation
 
     public virtual List<UserRoles> UserRoles { get; set; }

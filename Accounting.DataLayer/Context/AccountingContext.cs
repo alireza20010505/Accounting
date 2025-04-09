@@ -23,6 +23,12 @@ namespace Accounting.DataLayer.Context
         public DbSet<UserRoles> UserRoles { get; set; }
         #endregion
 
+        #region Transection
+
+        public DbSet<TransectionType> TransectionTypes { get; set; }
+
+        #endregion
+
 
 
     }

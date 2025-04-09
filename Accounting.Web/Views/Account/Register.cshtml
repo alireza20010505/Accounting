@@ -1,0 +1,101 @@
+﻿@model Accounting.Core.DTOs.AccountViewModel.RegisterViewModel
+
+@{
+    ViewData["Title"] = "ثبت نام";
+    Layout = "_Layout";
+}
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <partial name="_Metas"/>
+  
+  <partial name="_Styles"/>
+  <!-- End layout styles -->
+
+  <link rel="shortcut icon" href="~/images/favicon.png" />
+</head>
+
+<body>
+<div class="main-wrapper">
+  <div class="page-wrapper full-page">
+    <div class="page-content d-flex align-items-center justify-content-center">
+
+      <div class="row w-100 mx-0 auth-page">
+        <div class="col-md-8 col-xl-6 mx-auto">
+          <div class="card">
+            <div class="row">
+              <div class="col-md-4 pe-md-0">
+                <div class="auth-side-wrapper">
+
+                </div>
+              </div>
+              <div class="col-md-8 ps-md-0">
+                <div class="auth-form-wrapper px-4 py-5">
+                  <a href="#" class="noble-ui-logo logo-light d-block mb-2">Noble<span>UI</span></a>
+                  <h5 class="text-muted fw-normal mb-4">ایجاد حساب کاربری</h5>
+                  <form class="forms-sample" method="post" asp-action="Register">
+                    <div class="mb-3">
+                     
+                      <input asp-for="UserName" type="text" class="form-control" id="username" autocomplete="Username"
+                             placeholder="نام کاربری">
+                    </div>
+                    <div class="mb-3">
+
+                      <input asp-for="AccountCode" type="text" class="form-control" id="accounted" autocomplete="accounted"
+                             placeholder="شماره حساب">
+                      <p class="text-bg-info">شماره حساب شما فقط یکبار قابل افزودن میباشد</p>
+                    </div>
+              
+                    <div class="mb-3">
+                    
+                      <input type="password" asp-for="Password" class="form-control" id="password" autocomplete="current-password"
+                             placeholder="رمز عبور">
+                    </div>
+                    <div class="mb-3">
+
+                      <input type="password" asp-for="RePassword" class="form-control" id="userPassword" autocomplete="current-password"
+                             placeholder=" تکرار رمز عبور ">
+                    </div>
+                    <div class="form-check mb-3">
+                      
+                   
+                    </div>
+                    <div asp-validation-summary="All"></div>
+                    <div>
+                      <button class="btn btn-success" type="submit">ثبت نام</button>
+              
+                    </div>
+                   
+                    <a href="login.html" class="d-block mt-3 text-muted">حساب کاربری دارید؟ وارد شوید</a>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- core:js -->
+<script src="~/vendors/core/core.js"></script>
+<!-- endinject -->
+
+<!-- Plugin js for this page -->
+<!-- End plugin js for this page -->
+
+<!-- inject:js -->
+<script src="~/vendors/feather-icons/feather.min.js"></script>
+<script src="~/js/template.js"></script>
+<!-- endinject -->
+
+<!-- Custom js for this page -->
+<!-- End custom js for this page -->
+
+</body>
+
+</html>

@@ -75,6 +75,9 @@ namespace Accounting.DataLayer.Migrations
                     b.Property<int>("TransactionType")
                         .HasColumnType("int");
 
+                    b.Property<int>("TransectionTypeTypeId")
+                        .HasColumnType("int");
+
                     b.Property<DateTime?>("UpdateDate")
                         .HasColumnType("datetime2");
 
@@ -83,9 +86,25 @@ namespace Accounting.DataLayer.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("TransectionTypeTypeId");
+
                     b.HasIndex("UserId");
 
                     b.ToTable("Transactions");
+                });
+
+            modelBuilder.Entity("Accounting.DataLayer.Entities.TransectionType", b =>
+                {
+                    b.Property<int>("TypeId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("TypeName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("TypeId");
+
+                    b.ToTable("TransectionTypes");
                 });
 
             modelBuilder.Entity("Accounting.DataLayer.Entities.User", b =>
@@ -105,6 +124,10 @@ namespace Accounting.DataLayer.Migrations
 
                     b.Property<bool>("IsDelete")
                         .HasColumnType("bit");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime?>("UpdateDate")
                         .HasColumnType("datetime2");
@@ -152,11 +175,19 @@ namespace Accounting.DataLayer.Migrations
 
             modelBuilder.Entity("Accounting.DataLayer.Entities.Transaction", b =>
                 {
+                    b.HasOne("Accounting.DataLayer.Entities.TransectionType", "TransectionType")
+                        .WithMany("Transactions")
+                        .HasForeignKey("TransectionTypeTypeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("Accounting.DataLayer.Entities.User", "User")
                         .WithMany("Transactions")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("TransectionType");
 
                     b.Navigation("User");
                 });
@@ -183,6 +214,11 @@ namespace Accounting.DataLayer.Migrations
             modelBuilder.Entity("Accounting.DataLayer.Entities.Role", b =>
                 {
                     b.Navigation("UserRoles");
+                });
+
+            modelBuilder.Entity("Accounting.DataLayer.Entities.TransectionType", b =>
+                {
+                    b.Navigation("Transactions");
                 });
 
             modelBuilder.Entity("Accounting.DataLayer.Entities.User", b =>
