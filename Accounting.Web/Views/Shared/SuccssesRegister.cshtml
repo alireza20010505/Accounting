@@ -1,29 +1,28 @@
 ﻿@model Accounting.DataLayer.Entities.User
 
 @{
-    Layout = "_Layout";
+    Layout = null;
     ViewData["Title"] = "ثبت نام موفق";
 }
 <head>
 <partial name="_Metas"/>
 <partial name="_Styles"/>
 </head>
-<nav class="page-breadcrumb">
-    <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="/">خانه</a></li>
-        <li class="breadcrumb-item active" aria-current="page">ثبت نام موفق</li>
-    </ol>
-</nav>
+
 <div class="row">
     <div class="col-md-12 grid-margin stretch-card">
         <div class="card">
             <div class="card-body">
                 <h4 class="card-title text-center">@Model.UserName عزیز </h4>
                 <p class="text-muted text-center" >
-                    ثبت نام شما در سایت حسابداران با موفقیت انجام شد!
+                    ثبت نام شما در سایت <a href="/">حسابداران</a> با موفقیت انجام شد!
                     جهت ورود به سایت کلیک کنید
                 </p>
-                <a href="/" class="btn btn-primary text-center" >ورود به سایت</a>
+                <div class="row">
+                    <div class="col-md-3">
+                        <a href="/" class="btn btn-primary text-center" >ورود به سایت</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

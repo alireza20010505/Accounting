@@ -23,9 +23,28 @@ public class AccountController : Controller
     {
         return View();
     }
-
-
     
+    [HttpPost]
+    
+    //TODO Login
+    public IActionResult Login(AccountViewModel.LoginViewModel login)
+    {
+        if (!ModelState.IsValid)
+        {
+            return View(login);
+        }
+
+        if (!_userService.UserExists(login.UserName))
+        {
+            ModelState.AddModelError("UserName", "نام کاربری معیتبر نمیباشد");
+            return View(login);
+        }
+        return View();
+    }
+
+    #region Register
+
+     
     [Route("Register")]
     public IActionResult Register()
     {
@@ -58,6 +77,7 @@ public class AccountController : Controller
         {
             UserName = register.UserName,
             AccountCode = register.AccountCode,
+            Address = register.Address,
             CreateDate = DateTime.Now,
             Password = register.Password,
             UpdateDate = null,
@@ -68,4 +88,7 @@ public class AccountController : Controller
         _userService.AddUser(user);
         return View("SuccssesRegister",user);
     }
+
+    #endregion
+   
 }

@@ -59,12 +59,12 @@
 										
 										<form class="forms-sample">
 											<div class="mb-3">
-												<label for="userEmail" class="form-label"></label>
-												<input type="email" class="form-control" id="userEmail"
+												
+												<input type="text" class="form-control" id="username"
 													placeholder="نام کاربری">
 											</div>
 											<div class="mb-3">
-												<label for="userPassword" class="form-label"></label>
+												
 												<input type="password" class="form-control" id="userPassword"
 													autocomplete="current-password" placeholder="رمز عبور">
 											</div>
@@ -74,8 +74,9 @@
 													مرا به خاطر بسپار
 												</label>
 											</div>
+											<div asp-validation-summary="All"></div>
 											<div>
-												<a href=""
+												<a asp-controller="Account" asp-action="Login"
 													class="btn btn-primary me-2 mb-2 mb-md-0 text-white">ورود</a>
 											
 											</div>

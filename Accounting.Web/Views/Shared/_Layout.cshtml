@@ -3,9 +3,8 @@
 
 <head>
     <partial name="_Metas"/>
-
-    <title>@ViewData["Title"]</title>
     <partial name="_Styles"/>
+    <title>@ViewData["Title"]</title>
 </head>
 
 <body>
@@ -13,32 +12,10 @@
 
     <!-- partial:../../partials/_navbar.html -->
     <div class="horizontal-menu">
-        <nav class="navbar top-navbar">
-            <div class="container">
-                <div class="navbar-content">
-                    <a href="#" class="navbar-brand">
-                        Noble<span>UI</span>
-                    </a>
-                    <form class="search-form">
-                        <div class="input-group">
-                            <div class="input-group-text">
-                                <i data-feather="search"></i>
-                            </div>
-                            <input type="text" class="form-control" id="navbarForm" placeholder="جست و جو...">
-                        </div>
-                    </form>
-                    <div class="d-flex ">
-
-                        <div class="d-flex text-center align-items-center "><a href="#">ورود</a></div>
-
-                        <div class="d-flex text-center align-items-center ">/<a href="#">عضویت</a></div>
-                    </div>
-                </div>
-            </div>
-        </nav>
+     
 
     </div>
-    @RenderBody();
+  
     <!-- partial -->
 
     <div class="page-wrapper">
@@ -73,4 +50,5 @@
 
 
 </body>
+@RenderBody();
 </html>

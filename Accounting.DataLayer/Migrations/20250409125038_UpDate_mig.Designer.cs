@@ -4,6 +4,7 @@ using Accounting.DataLayer.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Accounting.DataLayer.Migrations
 {
     [DbContext(typeof(AccountingContext))]
-    partial class AccountingContextModelSnapshot : ModelSnapshot
+    [Migration("20250409125038_UpDate_mig")]
+    partial class UpDate_mig
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -75,9 +78,6 @@ namespace Accounting.DataLayer.Migrations
                     b.Property<int>("TransactionType")
                         .HasColumnType("int");
 
-                    b.Property<int>("TransectionTypeTypeId")
-                        .HasColumnType("int");
-
                     b.Property<DateTime?>("UpdateDate")
                         .HasColumnType("datetime2");
 
@@ -86,25 +86,9 @@ namespace Accounting.DataLayer.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("TransectionTypeTypeId");
-
                     b.HasIndex("UserId");
 
                     b.ToTable("Transactions");
-                });
-
-            modelBuilder.Entity("Accounting.DataLayer.Entities.TransectionType", b =>
-                {
-                    b.Property<int>("TypeId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("TypeName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("TypeId");
-
-                    b.ToTable("TransectionTypes");
                 });
 
             modelBuilder.Entity("Accounting.DataLayer.Entities.User", b =>
@@ -116,10 +100,6 @@ namespace Accounting.DataLayer.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
 
                     b.Property<string>("AccountCode")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Address")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -179,19 +159,11 @@ namespace Accounting.DataLayer.Migrations
 
             modelBuilder.Entity("Accounting.DataLayer.Entities.Transaction", b =>
                 {
-                    b.HasOne("Accounting.DataLayer.Entities.TransectionType", "TransectionType")
-                        .WithMany("Transactions")
-                        .HasForeignKey("TransectionTypeTypeId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("Accounting.DataLayer.Entities.User", "User")
                         .WithMany("Transactions")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("TransectionType");
 
                     b.Navigation("User");
                 });
@@ -218,11 +190,6 @@ namespace Accounting.DataLayer.Migrations
             modelBuilder.Entity("Accounting.DataLayer.Entities.Role", b =>
                 {
                     b.Navigation("UserRoles");
-                });
-
-            modelBuilder.Entity("Accounting.DataLayer.Entities.TransectionType", b =>
-                {
-                    b.Navigation("Transactions");
                 });
 
             modelBuilder.Entity("Accounting.DataLayer.Entities.User", b =>

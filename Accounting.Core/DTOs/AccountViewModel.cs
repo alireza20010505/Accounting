@@ -26,6 +26,10 @@ public class AccountViewModel
         [MaxLength(16,ErrorMessage = "شماره حساب/کارت معتبر نیست")]
         [Required(ErrorMessage = "ورود شماره حساب/کارت الزامیست")]
         public string AccountCode { get; set; }
+
+        [MaxLength(700, ErrorMessage = "آدرس وارد شده طولانی است.")]
+        public string Address { get; set; }
+        public DateOnly CreateDate { get; set; }=DateOnly.FromDateTime(DateTime.Now);
     }
 
     #endregion

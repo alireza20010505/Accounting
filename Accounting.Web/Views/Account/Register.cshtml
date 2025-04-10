@@ -1,8 +1,8 @@
 ﻿@model Accounting.Core.DTOs.AccountViewModel.RegisterViewModel
 
 @{
-    ViewData["Title"] = "ثبت نام";
-    Layout = "_Layout";
+  ViewData["Title"] = "ثبت نام";
+  Layout = null;
 }
 
 <!DOCTYPE html>
@@ -10,18 +10,18 @@
 
 <head>
   <partial name="_Metas"/>
-  
+
   <partial name="_Styles"/>
   <!-- End layout styles -->
 
-  <link rel="shortcut icon" href="~/images/favicon.png" />
+  <link rel="shortcut icon" href="~/images/favicon.png"/>
 </head>
 
 <body>
 <div class="main-wrapper">
   <div class="page-wrapper full-page">
     <div class="page-content d-flex align-items-center justify-content-center">
-
+      
       <div class="row w-100 mx-0 auth-page">
         <div class="col-md-8 col-xl-6 mx-auto">
           <div class="card">
@@ -37,37 +37,44 @@
                   <h5 class="text-muted fw-normal mb-4">ایجاد حساب کاربری</h5>
                   <form class="forms-sample" method="post" asp-action="Register">
                     <div class="mb-3">
-                     
+
                       <input asp-for="UserName" type="text" class="form-control" id="username" autocomplete="Username"
                              placeholder="نام کاربری">
                     </div>
                     <div class="mb-3">
 
-                      <input asp-for="AccountCode" type="text" class="form-control" id="accounted" autocomplete="accounted"
+                      <input asp-for="AccountCode" type="text" class="form-control" id="accounted"
+                             autocomplete="accounted"
                              placeholder="شماره حساب">
-                      <p class="text-bg-info">شماره حساب شما فقط یکبار قابل افزودن میباشد</p>
+                      <p class="text-bg-success text-center">شماره حساب شما فقط یکبار قابل افزودن میباشد</p>
                     </div>
-              
                     <div class="mb-3">
-                    
-                      <input type="password" asp-for="Password" class="form-control" id="password" autocomplete="current-password"
+
+                      <input asp-for="Address" type="text" class="form-control" id="address"
+                             autocomplete="address"
+                             placeholder="آدرس">
+                      <p class="text-bg-danger text-center">از - برای جدا سازی آدرس استفاده کنید</p>
+                    </div>
+
+                    <div class="mb-3">
+
+                      <input type="password" asp-for="Password" class="form-control" id="password"
+                             autocomplete="current-password"
                              placeholder="رمز عبور">
                     </div>
                     <div class="mb-3">
 
-                      <input type="password" asp-for="RePassword" class="form-control" id="userPassword" autocomplete="current-password"
+                      <input type="password" asp-for="RePassword" class="form-control" id="userPassword"
+                             autocomplete="current-password"
                              placeholder=" تکرار رمز عبور ">
                     </div>
-                    <div class="form-check mb-3">
-                      
-                   
-                    </div>
+                 
                     <div asp-validation-summary="All"></div>
-                    <div>
+                    <div class="row text-center">
                       <button class="btn btn-success" type="submit">ثبت نام</button>
-              
+
                     </div>
-                   
+
                     <a href="login.html" class="d-block mt-3 text-muted">حساب کاربری دارید؟ وارد شوید</a>
                   </form>
                 </div>

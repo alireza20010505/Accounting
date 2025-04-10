@@ -1,0 +1,71 @@
+﻿
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <partial name="_Metas"/>
+    <partial name="_Styles"/>
+    <link rel="shortcut icon" href="~/images/favicon.png" />
+</head>
+
+<body>
+<div class="main-wrapper">
+
+    <!-- partial:../../partials/_navbar.html -->
+    <div class="horizontal-menu">
+        <nav class="navbar top-navbar">
+            <div class="container">
+                <div class="navbar-content">
+                    <a href="#" class="navbar-brand">
+                        Noble<span>UI</span>
+                    </a>
+                    <form class="search-form">
+                        <div class="input-group">
+                            <div class="input-group-text">
+                                <i data-feather="search"></i>
+                            </div>
+                            <input type="text" class="form-control" id="navbarForm" placeholder="جستجو ...">
+                        </div>
+                    </form>
+                  
+                </div>
+            </div>
+        </nav>
+      
+    </div>
+    <!-- partial -->
+
+    <div class="page-wrapper">
+
+        <div class="page-content">
+
+   
+
+        </div>
+
+        <!-- partial:../../partials/_footer.html -->
+        <footer
+            class="footer d-flex flex-column flex-md-row align-items-center justify-content-between px-4 py-3 border-top small">
+            <a class="text-muted mb-1 mb-md-0">کپی رایت © 2020، تمام حقوق محفوظ است</a>.
+         
+        </footer>
+        <!-- partial -->
+
+    </div>
+</div>
+
+
+<script src="~/vendors/core/core.js"></script>
+<script src="~/vendors/feather-icons/feather.min.js"></script>
+<script src="~/js/template.js"></script>
+
+</body>
+@RenderBody()
+</html>
+
+
+
+
+
+
+

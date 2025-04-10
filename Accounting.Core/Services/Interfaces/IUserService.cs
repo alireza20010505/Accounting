@@ -1,4 +1,5 @@
-﻿using Accounting.DataLayer.Entities;
+﻿using Accounting.Core.DTOs;
+using Accounting.DataLayer.Entities;
 
 namespace Accounting.Core.Services.Interfaces;
 
@@ -18,6 +19,7 @@ public interface IUserService
      bool UserExists(string userName);
      long GetUserIdByUsername(string username);
      User GetUserByAccountCode(string accountCode);
+     InformationUserViewModel GetUserInformation(int userId);
 
-    #endregion
+     #endregion
 }
